@@ -23,25 +23,33 @@ type="text/javascript" src="qrcode.js"></script>
 
 <?php 
 $url = $_GET['url'];
-$size = 100;
+$size = $_GET['size'];
+
 if($url == ""){
 	$url = "Data Undefined";
 	echo $url."<br>";
 }
-//"http://jindo.dev.naver.com/collie"
-//echo "aa";
+
+if($size == ""){
+	$size = 100;
+	//echo $size."<br>";
+}
+
+echo '<script type="text/javascript">';
+echo "var size = '$size';"; 
+echo '</script>';
+
 ?>
 
 <input id="text" type="hidden" value=<?php echo $url; ?> style="width:80%" /><br />
-<input id="size" type="hidden" value=<?php echo 100; ?> style="width:80%" /><br />
 
 <div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
 
 
 <script type="text/javascript">
 var qrcode = new QRCode(document.getElementById("qrcode"), {
-	width : 300,//300,
-	height : 300 //300
+	width : (size),//300,
+	height : (size) //300
 });
 
 function makeCode () {		
