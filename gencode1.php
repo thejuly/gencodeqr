@@ -50,10 +50,10 @@ echo '</script>';
 ?>
 
 <div class="container" style="padding-top:10px">
-    <h2>Generate QR Code</h2>
-  	<p>Please Enter your data to generate QR Code:</p>
+
     <div class="col-md-4" style="background-color:#D6EAF8">
-	<h3 align="center"> </h3>
+	<h3 align="center">Please Enter your data:</h3>
+
       <form  name="form1" action="gencode1.php" method="POST" id="login" class="form-horizontal">
         <div class="form-group">
           <div class="col-sm-12">
